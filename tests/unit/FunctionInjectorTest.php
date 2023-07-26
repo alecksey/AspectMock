@@ -8,7 +8,7 @@ use AspectMock\Intercept\FunctionInjector;
 use AspectMock\Test as test;
 use PHPUnit\Framework\ExpectationFailedException;
 
-final class FunctionInjectorTest extends \Codeception\TestCase\Test
+final class FunctionInjectorTest extends \Codeception\Test\Unit
 {
     protected FunctionInjector $funcInjector;
 
@@ -34,7 +34,7 @@ final class FunctionInjectorTest extends \Codeception\TestCase\Test
     public function testReferencedParameterTemplate()
     {
         $php = $this->funcReferencedParameterInjector->getPHP();
-        verify($php)->stringContainsString("function preg_match(\$p0, \$p1, &\$p2=NULL, \$p3=NULL, \$p4=NULL)");
+        verify($php)->stringContainsString("function preg_match(\$p0, \$p1, &\$p2 = NULL, \$p3 = NULL, \$p4 = NULL)");
         verify($php)->stringContainsString("case 5: \$args = [\$p0, \$p1, &\$p2, \$p3, \$p4]; break;");
         verify($php)->stringContainsString("case 4: \$args = [\$p0, \$p1, &\$p2, \$p3]; break;");
         verify($php)->stringContainsString("case 3: \$args = [\$p0, \$p1, &\$p2]; break;");

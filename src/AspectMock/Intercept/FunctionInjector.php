@@ -65,7 +65,7 @@ EOF;
         }
 
         if ($internal && $parameter->isOptional()) {
-            $text .= "=NULL";
+            //$text .= "=NULL";
         }
 
         return $text;

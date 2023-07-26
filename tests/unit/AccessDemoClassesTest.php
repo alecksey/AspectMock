@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace demo;
 
-use PHPUnit\Framework\AssertionFailedError;
-use PHPUnit\Framework\TestCase;
 
-final class AccessDemoClassesTest extends TestCase
+use PHPUnit\Framework\AssertionFailedError;
+
+final class AccessDemoClassesTest extends \Codeception\Test\Unit
 {
     public function testUserModel()
     {

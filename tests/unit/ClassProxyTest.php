@@ -6,7 +6,7 @@ use AspectMock\Proxy\ClassProxy;
 use AspectMock\Test as test;
 use Codeception\Specify;
 
-final class ClassProxyTest extends \Codeception\TestCase\Test
+final class ClassProxyTest extends \Codeception\Test\Unit
 {
 
     use Specify;
@@ -73,4 +73,5 @@ final class ClassProxyTest extends \Codeception\TestCase\Test
         verify($class->hasMethod('method1InTrait'))->true();
         verify($class->hasMethod('methodInClass'))->true();
     }
+
 }
